@@ -5,8 +5,8 @@ Sample node REST API from scratch
 ### OS Setup
 - VirtualBox - 5.0.4
 - Vagrant - 1.7.4
-- Packer - 0.8.6 (using [boxcutter](https://github.com/tak-msk/ubuntu))
-- Ubuntu - 15.10
+- Packer - 0.8.6
+- Ubuntu - 15.10 (using [boxcutter](https://github.com/tak-msk/ubuntu))
 
 ### Packages
 - [nodebrew](https://github.com/hokaccha/nodebrew#install)
