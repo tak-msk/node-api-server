@@ -4,20 +4,11 @@ exists() { type -t "$1" > /dev/null 2>&1; }
 # update packages
 sudo apt-get update
 
-# install dependencies of linuxbrew
-sudo apt-get install -y build-essential curl git python-setuptools ruby
+# install some necessary packages
+sudo apt-get install -y build-essential curl git vim
 
-# install node (nodebrew -> node v5.10.0)
+# install node (v5.x)
 if ! exists node; then
-curl -L git.io/nodebrew | perl - setup
-
-## set envval to .bashrc
-cat << '__EOF__' > ~/.bashrc
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-__EOF__
-
-source ~/.bashrc
-
-nodebrew install-binary v5.10.0
-nodebrew use v5.10.0
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
 fi
