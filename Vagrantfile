@@ -77,4 +77,7 @@ Vagrant.configure(2) do |config|
     override.ssh.pty = true
   end
 
+  config.vm.provision "shell", inline: "pm2 start /home/vagrant/data/server.js",
+  run: "always"
+
 end
