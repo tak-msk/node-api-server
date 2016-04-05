@@ -6,7 +6,8 @@ Sample node REST API from scratch
 - VirtualBox - 5.0.4
 - Vagrant - 1.7.4
 - Packer - 0.8.6
-- Ubuntu - 15.10 (using [boxcutter](https://github.com/tak-msk/ubuntu))
+- Ubuntu - ~~15.10~~ -> 14.04 (using [boxcutter](https://github.com/tak-msk/ubuntu))
+  - Because of waiting for getting [this](https://github.com/mitchellh/vagrant/pull/6724) merged, we use 14.04 instead
 
 ### Other
 - [Node.js](https://github.com/nodesource/distributions#deb) - 5.10.0
