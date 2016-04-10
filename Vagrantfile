@@ -78,6 +78,6 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", inline: "pm2 start /home/vagrant/data/server.js",
-  run: "always"
+  run: "always", privileged: false
 
 end
