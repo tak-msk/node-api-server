@@ -12,3 +12,8 @@ if ! exists node; then
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install -y nodejs
 fi
+
+# install pm2 (node process manager)
+if ! exists pm2; then
+npm install pm2 -g
+fi
