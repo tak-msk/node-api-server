@@ -12,3 +12,4 @@ Sample node REST API from scratch
 ### Other
 - [Node.js](https://github.com/nodesource/distributions#deb) - 5.10.0
 - npm - 3.8.3
+- [pm2](https://github.com/Unitech/pm2) - 1.1.1
