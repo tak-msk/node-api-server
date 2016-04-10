@@ -50,13 +50,26 @@ router.route('/users')
     })
     // Get user list (GET http://localhost:3000/api/users)
     .get(function (req, res) {
-    	User.find(function (err, users) {
-    		if (err) {
-    			res.send(err);
-    		}
+        User.find(function (err, users) {
+            if (err) {
+                res.send(err);
+            }
 
-    		res.json(users);
-    	});
+            res.json(users);
+        });
+    });
+
+router.route('/users/:user_id')
+    // Get specific user info (GET http://localhost:3000/api/users/:user_id)
+    .get(function (req, res) {
+        // find a user with user_id
+        User.findById(req.params.user_id, function (err, user) {
+            if (err) {
+                res.send(err);
+            }
+
+            res.json(user);
+        });
     });
 
 // Routing
