@@ -94,6 +94,21 @@ router.route('/users/:user_id')
                 });
             });
         });
+    })
+    // Delete user info (DELETE http://localhost:3000/api/users/:user_id)
+    .delete(function (req, res) {
+        User.remove({
+            _id: req.params.user_id
+        }, function (err, user) {
+            if (err) {
+                res.send(err);
+            }
+
+            res.json({
+                code: 200,
+                message: 'Successfully deleted'
+            });
+        });
     });
 
 // Routing
