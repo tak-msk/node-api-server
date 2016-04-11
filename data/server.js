@@ -70,6 +70,30 @@ router.route('/users/:user_id')
 
             res.json(user);
         });
+    })
+    // Update user info (PUT http://localhost:3000/api/users/:user_id)
+    .put(function (req, res) {
+        User.findById(req.params.user_id, function (err, user) {
+            if (err) {
+                res.send(err);
+            }
+
+            // Update each column
+            user.email = req.body.email;
+            user.name = req.body.name;
+            user.age = req.body.age;
+
+            user.save(function (err) {
+                if (err) {
+                    res.send(err);
+                }
+
+                res.json({
+                    code: 200,
+                    message: 'User updated'
+                });
+            });
+        });
     });
 
 // Routing
